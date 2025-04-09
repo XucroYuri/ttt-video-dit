@@ -56,7 +56,7 @@ Text annotations for the 3-second Tom and Jerry segments used during training ca
 
 ## RTX 4090 Optimization Branch Changelog
 
-We have created this optimization branch specifically for RTX 4090 24G GPUs, implementing a series of optimizations to enable efficient training on consumer-grade GPUs. Here are the key technical improvements:
+I have created this optimization branch specifically for RTX 4090 24G GPUs, implementing a series of optimizations to enable efficient training on consumer-grade GPUs. Here are the key technical improvements:
 
 ### April 9, 2025 - RTX 4090 Comprehensive Optimization
 - Created RTX 4090-specific configuration files supporting various video lengths (3s/9s/18s/30s/63s) with automated optimization scripts

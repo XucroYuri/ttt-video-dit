@@ -1,7 +1,6 @@
 # TTT-Video
 <img src="./docs/figures/hero.png" alt="Hero" style="width:100%;"/>
-TTT-Video 是一个用于微调扩散变换器(diffusion transformers)进行风格迁移和上下文扩展的代码库。我们使用测试时训练(Test-Time Training, TTT)层处理全局上下文中的长程关系，同时重用原始预训练模型的注意力层对每个三秒片段进行局部注意力处理。<br> <br>
-在这个代码库中，我们包含了长达63秒视频生成的训练和推理代码。我们首先在原始预训练的3秒视频长度上微调模型，用于风格迁移和整合TTT层。然后，我们分阶段在9秒、18秒、30秒和63秒的视频长度上进行训练，以实现上下文扩展。
+TTT-Video 是一个用于微调扩散变换器(diffusion transformers)进行风格迁移和上下文扩展的代码库。我们使用测试时训练(Test-Time Training, TTT)层处理全局上下文中的长程关系，同时重用原始预训练模型的注意力层对每个三秒片段进行局部注意力处理。
 
 [中文文档](./README_zh.md) | [English](./README.md)
 

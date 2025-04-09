@@ -3,6 +3,8 @@
 TTT-Video is a repository for finetuning diffusion transformers for style transfer and context extension. We use Test-Time Training (TTT) layers to handle long-range relationships across the global context, while reusing the original pretrained model's attention layers for local attention on each three second segment.  <br> <br>
 In this repository, we include training and inference code for up to 63 second video generation. We finetune our model first at the original pretrained 3 second video length for style transfer and incorporating TTT layers. Then we train in stages at video lengths of 9 sec, 18 sec, 30 sec, and 63 sec for context extension.
 
+[English](./README.md) | [中文文档](./README_zh.md)
+
 ## Model Architecture
 ![Architecture](./docs/figures/integration.jpg)
 
@@ -51,3 +53,33 @@ Text annotations for the 3-second Tom and Jerry segments used during training ca
 - [Dataset](./docs/dataset.md)
 - [Training](./docs/training.md)
 - [Sampling](./docs/sampling.md)
+
+## RTX 4090 Optimization Branch Changelog
+
+We have created this optimization branch specifically for RTX 4090 24G GPUs, implementing a series of optimizations to enable efficient training on consumer-grade GPUs. Here are the key technical improvements:
+
+### April 9, 2025 - RTX 4090 Comprehensive Optimization
+- Created RTX 4090-specific configuration files supporting various video lengths (3s/9s/18s/30s/63s) with automated optimization scripts
+- Optimized memory usage through improved batch sizes, gradient accumulation, and checkpoint mechanisms
+- Enhanced computation performance with FP16 mixed precision training and optimized TTT-MLP kernel for Ampere architecture
+- Improved training stability with adaptive gradient scaling and dynamic checkpoint strategies
+- Developed comprehensive performance monitoring system with real-time memory visualization and adaptive resource management
+
+### Usage
+
+To apply RTX 4090 optimization settings, simply run:
+
+```bash
+bash scripts/optimize_for_4090.sh [video_length(3s/9s/18s/30s/63s)]
+```
+
+This will automatically create optimized configuration files and training scripts. Then, you can start training using the generated script:
+
+```bash
+bash scripts/train_4090_3s.sh
+```
+
+For detailed optimization analysis and technical decisions, please refer to the following documents:
+- [4090 Optimization Analysis](./docs/4090_optimization_analysis.md)
+- [4090 Optimization Guide](./docs/4090_optimization_guide.md)
+- [Optimization Branch Development Notes](./docs/optimization_branch_notes.md)

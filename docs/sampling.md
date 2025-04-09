@@ -121,14 +121,12 @@ See a complete example [here](../inputs/example-9s.json).
 
 ### Video Length Options
 
-Based on the research paper, the model supports generating videos of different lengths:
-1. 3 second (same as pretrained)
-2. 9 second
-3. 18 second
-4. 30 second
-5. 63 second
+In this optimization branch, the model supports generating videos of the following lengths:
+1. 3 second (same as pretrained, recommended)
+2. 5 second (optional)
+3. 10 second (experimental)
 
-To generate videos of specific lengths, ensure you're using the checkpoint trained on that stage or longer.
+To generate videos of specific lengths, ensure you're using the checkpoint trained on that specific length. The 3-second option is recommended as it maintains full compatibility with the original project.
 
 ### Parallelism Options
 > To enable parallelism, set the following parameters to a value greater than 1.

@@ -52,6 +52,8 @@ git submodule update --init --recursive
 - [训练](./docs/training.md)
 - [采样](./docs/sampling.md)
 
+---
+
 ## RTX 4090优化分支更新日志
 
 我创建了这个优化分支，专门针对RTX 4090 24G显卡进行了一系列优化，使模型能够在消费级GPU上高效训练。以下是主要技术改进：
